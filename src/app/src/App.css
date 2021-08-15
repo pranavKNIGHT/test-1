@@ -2,6 +2,7 @@
   /* display: flex; */
   /* display: inline; */
   margin-top: -25px !important;
+  margin-bottom: 20px;
   min-height: 100vh;
   min-width: 52vh;
   color: #b0bec5;
@@ -22,13 +23,15 @@
 }
 
 .app__todoList {
-  margin: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 5px;
   display: flex;
   position: relative;
   text-align: center;
-  line-height: 2em;
+  line-height: 1em;
   /* align-items: center; */
   font-size: 30px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(61, 61, 61);
   min-width: 300px;
 }
