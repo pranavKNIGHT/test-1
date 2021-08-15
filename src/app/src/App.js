@@ -22,9 +22,9 @@ export function App() {
       })
       .catch((err) => console.log(err));
 
-    // todos.push({
-    //   title: input,
-    // });
+    todos.push({
+      title: input,
+    });
 
     setInput("");
   };

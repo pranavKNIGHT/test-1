@@ -8,7 +8,6 @@ from pymongo import MongoClient
 mongo_uri = 'mongodb://' + os.environ["MONGO_HOST"] + ':' + os.environ["MONGO_PORT"]
 db = MongoClient(mongo_uri)['test_db']
 
-# 
 collection = db.test_collection
 #getting a database from mongo
 posts = db.posts
@@ -27,8 +26,6 @@ class TodoListView(APIView):
         # return todo elements in the collection
         for post in todo:
             data.append({'title':post["title"]})
-        # Implement this method - return all todo items from db instance above.
-        #data = JsonResponse(data,safe=False)
         seen = set()
         newArray = []
         for element in data:
