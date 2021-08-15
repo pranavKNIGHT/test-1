@@ -1,6 +1,6 @@
 .App {
   /* display: flex; */
-  display: inline;
+  /* display: inline; */
   margin-top: -25px !important;
   min-height: 100vh;
   min-width: 52vh;
@@ -8,7 +8,7 @@
   text-align: center;
   /* margin-bottom: -10px; */
   background-size: 200%;
-  background: #bdc3c7; /* fallback for old browsers */
+  background: #2c3f4b; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
     #2c3e50,
@@ -22,7 +22,7 @@
 }
 
 .app__todoList {
-  margin: auto;
+  margin: 30px;
   display: flex;
   position: relative;
   text-align: center;
