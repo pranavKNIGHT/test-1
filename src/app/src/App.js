@@ -42,7 +42,6 @@ export function App() {
               onChange={(e) => setInput(e.target.value)}
             />
           </div>
-
           <div>
             <button type="submit" onClick={addTodo}>
               Add a ToDo
