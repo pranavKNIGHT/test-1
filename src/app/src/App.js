@@ -8,7 +8,9 @@ export function App() {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await axios.get("/todos/");
+      const response = await axios
+        .get("/todos/")
+        .catch((err) => alert("api down", err));
       setTodos(response.data);
     };
     fetchTodos();
@@ -28,7 +30,7 @@ export function App() {
 
     setInput("");
   };
-  console.log(todos);
+  // console.log(todos);
   return (
     <div className="App">
       <div>

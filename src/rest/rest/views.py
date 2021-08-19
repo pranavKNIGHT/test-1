@@ -14,6 +14,7 @@ class TodoListView(APIView):
         data = []
         data = list(data)
         self.__todo = posts.find()
+        # db.dumperror()
         # posts.delete_one({"title":"charge phone"})
         for post in self.__todo:
             data.append({'title':post["title"]})
