@@ -12,7 +12,7 @@ export function App() {
       setTodos(response.data);
     };
     fetchTodos();
-  }, []);
+  }, [todos]);
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -22,9 +22,9 @@ export function App() {
       })
       .catch((err) => console.log(err));
 
-    todos.push({
-      title: input,
-    });
+    // todos.push({
+    //   title: input,
+    // });
 
     setInput("");
   };
@@ -43,7 +43,7 @@ export function App() {
             />
           </div>
           <div>
-            <button type="submit" onClick={addTodo}>
+            <button disabled={!input} type="submit" onClick={addTodo}>
               Add a ToDo
             </button>
           </div>
