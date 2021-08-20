@@ -6,32 +6,19 @@ import json, logging, os
 from pymongo import MongoClient
 
 mongo_uri = 'mongodb://' + os.environ["MONGO_HOST"] + ':' + os.environ["MONGO_PORT"]
-db = MongoClient(mongo_uri)['test_db']
+db = MongoClient(mongo_uri)['test_db']["test_col"]
 
 class TodoListView(APIView):
     def get(self, request):
-        posts = db.posts
+        todo= db.find()
+        # db.delete_one({"title":"Walk 30min"})
         data = []
         data = list(data)
-        self.__todo = posts.find()
-        # db.dumperror()
-        # posts.delete_one({"title":"charge phone"})
-        for post in self.__todo:
+        for post in todo:
             data.append({'title':post["title"]})
-        seen = set()
-        self.__newArray = []
-        for element in data:
-            key = tuple(element.items())
-            if key not in seen:
-                seen.add(key)
-                self.__newArray.append(element)
-        return Response(self.__newArray, status=status.HTTP_200_OK)
-        
+        return Response(data=data, status=status.HTTP_200_OK)
+
     def post(self, request):
-        posts = db.posts
         if request.method == 'POST':
-            posts.insert_one(request.data).inserted_id
-            return Response('working',status=status.HTTP_200_OK)
-
-    
-
+            post = db.insert_one(request.data)
+            return Response({'working'}, status=status.HTTP_200_OK)

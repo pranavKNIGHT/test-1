@@ -1,20 +1,21 @@
 import axios from "./axios";
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import FetchTodos from "./FetchTodos";
 
 export function App() {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  // const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const response = await axios
-        .get("/todos/")
-        .catch((err) => alert("api down", err));
-      setTodos(response.data);
-    };
-    fetchTodos();
-  }, [todos]);
+  // useEffect(() => {
+  //   const fetchTodos = async () => {
+  //     const response = await axios
+  //       .get("/todos/")
+  //       .catch((err) => alert("api or db is down", err));
+  //     setTodos(response.data);
+  //   };
+  //   fetchTodos();
+  // }, [todos]);
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -23,10 +24,6 @@ export function App() {
         title: input,
       })
       .catch((err) => console.log(err));
-
-    // todos.push({
-    //   title: input,
-    // });
 
     setInput("");
   };
@@ -51,7 +48,8 @@ export function App() {
           </div>
         </form>
       </div>
-      <div>
+      <FetchTodos />
+      {/* <div>
         <h1>List of TODOs</h1>
       </div>
       {todos.map((todo, index) => {
@@ -60,7 +58,7 @@ export function App() {
             {todo.title}
           </p>
         );
-      })}
+      })} */}
     </div>
   );
 }
