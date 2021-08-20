@@ -5,17 +5,6 @@ import FetchTodos from "./FetchTodos";
 
 export function App() {
   const [input, setInput] = useState("");
-  // const [todos, setTodos] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchTodos = async () => {
-  //     const response = await axios
-  //       .get("/todos/")
-  //       .catch((err) => alert("api or db is down", err));
-  //     setTodos(response.data);
-  //   };
-  //   fetchTodos();
-  // }, [todos]);
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -49,16 +38,6 @@ export function App() {
         </form>
       </div>
       <FetchTodos />
-      {/* <div>
-        <h1>List of TODOs</h1>
-      </div>
-      {todos.map((todo, index) => {
-        return (
-          <p className="app__todoList" key={index}>
-            {todo.title}
-          </p>
-        );
-      })} */}
     </div>
   );
 }
